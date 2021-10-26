@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new balloon</title>
+</head>
+<body>
+
+    <form th:method="POST" th:action="@{/balloons/add}">
+        <label for="bName">Name: </label>
+        <input type="text" id="bName" name="name" th:value="${balloonModel != null ? balloonModel.getName() : ''}">
+        <label for="bDesc">Description: </label>
+        <input type="text" id="bDesc" name="description" th:value="${balloonModel != null ? balloonModel.getDescription() : ''}">
+        <label for="manus">Manufacturers</label>
+        <select id="manus" name="manufacturerId">
+            <option th:each="m : ${manufacturers}" th:selected="${balloonModel!=null && balloonModel.getManufacturer()!=null ? (balloonModel.getManufacturer().getId() == m.getId() ? m.getId() : 0)  : 0}" th:value="${m.getId()}" th:text="${m.getName()}">
+            </option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

@@ -2,18 +2,21 @@ package mk.ukim.finki.lab.model;
 
 import lombok.Data;
 
+import javax.persistence.*;
+
 @Data
+@Entity
+@Table(name = "shop_orders")
 public class Order {
     private String balloonColor;
     private String balloonSize;
-    private String clientName;
-    private String clientAddress;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
 
-    public Order(String balloonColor, String clientName, String clientAddress) {
+    public Order(String balloonColor) {
         this.balloonColor = balloonColor;
-        this.clientAddress = clientAddress;
-        this.clientName = clientName;
-
     }
+    public Order(){}
 }

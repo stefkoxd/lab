@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "balloon-list-servlet")
+@WebServlet(name = "balloon-list-servlet", urlPatterns = "/servlet/balloons")
 public class BalloonListServlet extends HttpServlet {
 
     private final BalloonService service;

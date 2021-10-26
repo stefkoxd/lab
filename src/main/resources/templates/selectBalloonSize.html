@@ -31,12 +31,14 @@
     <h1>Balloon Order page - Select Balloon Size </h1>
 </header>
 <section>
-    <form th:method="post" th:action="@{/BalloonOrder}">
+    <form th:method="post" th:action="@{/balloon/balloonOrder}">
         <h2>Choose balloon size:</h2>
         <input type="radio" name="size" value="Small"> Small <br/>
         <input type="radio" name="size" value="Medium"> Medium <br/>
         <input type="radio" name="size" value="Big"> Big <br/>
         <input type="radio" name="size" value="Extra Big"> Extra Big <br/>
+        <input type="hidden" name="balloon" th:value="${balloon}">
+        <input type="hidden" name="color" th:value="${color}">
         <br/>
         <input type="submit" value="Submit">
     </form>

@@ -35,12 +35,15 @@
 </header>
 <section>
 
-    <form th:method="post" th:action="@{/ConfirmationInfo}">
+    <form th:method="post" th:action="@{/balloon/confirmation}">
         <label for="clientName">Client Name:</label><br/>
         <input type="text" id="clientName" name="clientName"/><br/>
         <label for="clientAddress">Delivery Address:</label><br/>
         <textarea cols="40" rows="3" id="clientAddress" name="clientAddress"></textarea><br/>
         <input type="submit" value="Submit">
+        <input type="hidden" name="balloon" th:value="${balloon}">
+        <input type="hidden" name="color" th:value="${color}">
+        <input type="hidden" name="size" th:value="${size}">
     </form>
 
 </section>

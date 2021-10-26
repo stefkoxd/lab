@@ -30,6 +30,8 @@ public class ConfirmationInfoServlet extends HttpServlet {
         context.setVariable("clientName", req.getSession().getAttribute("clientName"));
         context.setVariable("clientAddress", req.getSession().getAttribute("clientAddress"));
 
+        req.getSession().setAttribute("User", req.getSession().getAttribute("clientName"));
+
         context.setVariable("clientBrowser", req.getHeader("User-Agent"));
         context.setVariable("ipAddress", req.getRemoteAddr());
 
